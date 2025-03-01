@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thisara Hot Seen</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Styles for Age Verification */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .age-verification {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .age-verification h2 {
+            font-size: 1.8rem;
+            color: #f0a500;
+            margin-bottom: 20px;
+        }
+
+        .age-verification button {
+            padding: 15px 25px;
+            background-color: #f0a500;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .age-verification button:hover {
+            background-color: #ff5722;
+        }
+    </style>
+    <script>
+        function confirmAge(response) {
+            if (response === 'yes') {
+                // Show the main content if the user is 18 or older
+                document.getElementById('age-verification').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            } else {
+                // Alert the user and redirect or prevent access
+                alert("Sorry, you must be 18 or older to access this site.");
+                window.location.href = "https://www.google.com";  // Redirect to a safe site
+            }
+        }
+    </script>
+</head>
+<body>
+    
+
+    <!-- Age Verification Section -->
+    <div id="age-verification" class="age-verification">
+        <h2>Are you 18 years or older?</h2>
+        <button onclick="confirmAge('yes')">Yes, I'm 18+</button>
+        <button onclick="confirmAge('no')">No, I'm under 18</button>
+    </div>
+
+    <!-- Main Content (Hidden until age confirmation) -->
+    <div id="main-content" style="display:none;">
+        <!-- Navigation Bar -->
+        <header>
+            <div class="logo-container">
+                <!-- Logo with click event to open modal -->
+                <img src="img/logo.png" alt="Thisara Logo" class="logo" onclick="openModal()">
+                <h1 class="logo-name">Thisara Lochana</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li><a href="index.html" class="navbar-link">HOME</a></li>
+                    <li><a href="imges.html" class="navbar-link">IMAGES</a></li>
+                    <li><a href="video.html" class="navbar-link">VIDEO</a></li>
+                    <li><a href="about.html" class="navbar-link">ABOUT</a></li>
+                    <li><a href="contact.html" class="navbar-link">CONTACTS</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Modal for Logo Image -->
+        <div id="logoModal" class="modal" onclick="closeModal()">
+            <img class="modal-content" id="img01">
+        </div>
+
+        <!-- Main Content -->
+        <div id="home" class="container">
+            <h1 class="title">🔥 THISARA HOT SEEN 🔥</h1>
+            <h2 class="fun-text">Mu Mara Kariyekne 😆😂</h2>
+        </div>
+
+
+<!-- Attention-Grabbing Banner -->
+<div class="hot-news-banner">
+    <p>🔥 HOT NEWS! Thisara’s Secret Video LEAKED! See What Everyone is Talking About! (100% Real) 🔥 </p>
+</div>
+
+
+
+
+        <!-- Footer Section (Login part removed) -->
+        <footer>
+            <div class="footer-content">
+                <!-- The login part has been completely removed -->
+            </div>
+        </footer>
+
+    </div> <!-- End of main-content -->
+
+    <script>
+        // Open the modal to show the image
+        function openModal() {
+            const modal = document.getElementById("logoModal");
+            const img = document.getElementById("img01");
+            img.src = document.querySelector(".logo").src; // Set modal image to logo image
+            modal.style.display = "block"; // Show the modal
+        }
+
+        // Close the modal when clicking on it
+        function closeModal() {
+            document.getElementById("logoModal").style.display = "none"; // Hide the modal
+        }
+    </script>
+</body>
+</html>
